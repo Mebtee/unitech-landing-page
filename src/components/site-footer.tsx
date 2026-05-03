@@ -25,8 +25,7 @@ export function SiteFooter() {
           <h4 className="font-semibold mb-4 text-sm">Company</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li><Link to="/about" className="hover:text-primary transition">About Us</Link></li>
-            <li><Link to="/projects" className="hover:text-primary transition">Projects</Link></li>
-            <li><Link to="/news" className="hover:text-primary transition">News</Link></li>
+            <li><Link to="/steel-materials" className="hover:text-primary transition">Steel Materials</Link></li>
             <li><Link to="/contact" className="hover:text-primary transition">Contact</Link></li>
           </ul>
         </div>
@@ -37,6 +36,7 @@ export function SiteFooter() {
             <li><Link to="/telecom" className="hover:text-primary transition">Telecom Infrastructure</Link></li>
             <li><Link to="/electric-vehicles" className="hover:text-primary transition">Electric Vehicles</Link></li>
             <li><Link to="/electric-vehicles" className="hover:text-primary transition">EV Charging</Link></li>
+            <li><Link to="/steel-materials" className="hover:text-primary transition">Steel Products</Link></li>
           </ul>
         </div>
 

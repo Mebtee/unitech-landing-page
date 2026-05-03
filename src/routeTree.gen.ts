@@ -10,8 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TelecomRouteImport } from './routes/telecom'
-import { Route as ProjectsRouteImport } from './routes/projects'
-import { Route as NewsRouteImport } from './routes/news'
+import { Route as SteelMaterialsRouteImport } from './routes/steel-materials'
 import { Route as ElectricVehiclesRouteImport } from './routes/electric-vehicles'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
@@ -22,14 +21,9 @@ const TelecomRoute = TelecomRouteImport.update({
   path: '/telecom',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProjectsRoute = ProjectsRouteImport.update({
-  id: '/projects',
-  path: '/projects',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NewsRoute = NewsRouteImport.update({
-  id: '/news',
-  path: '/news',
+const SteelMaterialsRoute = SteelMaterialsRouteImport.update({
+  id: '/steel-materials',
+  path: '/steel-materials',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ElectricVehiclesRoute = ElectricVehiclesRouteImport.update({
@@ -58,8 +52,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/electric-vehicles': typeof ElectricVehiclesRoute
-  '/news': typeof NewsRoute
-  '/projects': typeof ProjectsRoute
+  '/steel-materials': typeof SteelMaterialsRoute
   '/telecom': typeof TelecomRoute
 }
 export interface FileRoutesByTo {
@@ -67,8 +60,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/electric-vehicles': typeof ElectricVehiclesRoute
-  '/news': typeof NewsRoute
-  '/projects': typeof ProjectsRoute
+  '/steel-materials': typeof SteelMaterialsRoute
   '/telecom': typeof TelecomRoute
 }
 export interface FileRoutesById {
@@ -77,8 +69,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/electric-vehicles': typeof ElectricVehiclesRoute
-  '/news': typeof NewsRoute
-  '/projects': typeof ProjectsRoute
+  '/steel-materials': typeof SteelMaterialsRoute
   '/telecom': typeof TelecomRoute
 }
 export interface FileRouteTypes {
@@ -88,8 +79,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/electric-vehicles'
-    | '/news'
-    | '/projects'
+    | '/steel-materials'
     | '/telecom'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -97,8 +87,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/electric-vehicles'
-    | '/news'
-    | '/projects'
+    | '/steel-materials'
     | '/telecom'
   id:
     | '__root__'
@@ -106,8 +95,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/electric-vehicles'
-    | '/news'
-    | '/projects'
+    | '/steel-materials'
     | '/telecom'
   fileRoutesById: FileRoutesById
 }
@@ -116,8 +104,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   ElectricVehiclesRoute: typeof ElectricVehiclesRoute
-  NewsRoute: typeof NewsRoute
-  ProjectsRoute: typeof ProjectsRoute
+  SteelMaterialsRoute: typeof SteelMaterialsRoute
   TelecomRoute: typeof TelecomRoute
 }
 
@@ -130,18 +117,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TelecomRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/projects': {
-      id: '/projects'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/news': {
-      id: '/news'
-      path: '/news'
-      fullPath: '/news'
-      preLoaderRoute: typeof NewsRouteImport
+    '/steel-materials': {
+      id: '/steel-materials'
+      path: '/steel-materials'
+      fullPath: '/steel-materials'
+      preLoaderRoute: typeof SteelMaterialsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/electric-vehicles': {
@@ -180,8 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   ElectricVehiclesRoute: ElectricVehiclesRoute,
-  NewsRoute: NewsRoute,
-  ProjectsRoute: ProjectsRoute,
+  SteelMaterialsRoute: SteelMaterialsRoute,
   TelecomRoute: TelecomRoute,
 }
 export const routeTree = rootRouteImport

@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { ArrowRight, Radio, BatteryCharging, Cpu, ShieldCheck, Globe2, Sparkles } from "lucide-react";
+import { ArrowRight, Radio, BatteryCharging, Cpu, ShieldCheck, Globe2, Sparkles, Factory } from "lucide-react";
+import { HuaweiPartnerBadge } from "@/components/huawei-partner-badge";
 import { PageShell } from "@/components/page-shell";
 import heroBg from "@/assets/hero-bg.jpg";
 import telecomImg from "@/assets/telecom-hero.jpg";
@@ -11,9 +11,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Unitech E-Power and Trading PLC | Telecom & Electric Vehicles" },
-      { name: "description", content: "Pioneering telecom infrastructure and electric mobility for a sustainable future." },
+      { name: "description", content: "Pioneering telecom infrastructure, steel supply, and electric mobility for a sustainable future." },
       { property: "og:title", content: "Unitech E-Power and Trading PLC" },
-      { property: "og:description", content: "Pioneering telecom infrastructure and electric mobility for a sustainable future." },
+      { property: "og:description", content: "Pioneering telecom infrastructure, steel supply, and electric mobility for a sustainable future." },
       { property: "og:image", content: heroBg },
       { name: "twitter:image", content: heroBg },
     ],
@@ -22,63 +22,8 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const slides = [
-    { src: heroBg, alt: "Unitech infrastructure hero scene" },
-    { src: telecomImg, alt: "Telecom field deployment" },
-    { src: evImg, alt: "Electric vehicle showcase" },
-  ];
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveSlide((current) => (current + 1) % slides.length);
-    }, 3500);
-
-    return () => window.clearInterval(timer);
-  }, [slides.length]);
-
   return (
     <PageShell>
-      {/* TOP AUTO SLIDER */}
-      <section className="container-px mx-auto max-w-7xl pt-10 md:pt-14">
-        <div className="max-w-3xl mx-auto">
-          <div className="relative overflow-hidden rounded-2xl border border-border shadow-[var(--shadow-elevated)] bg-card/80">
-            <motion.div
-              className="flex"
-              animate={{ x: `-${activeSlide * 100}%` }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-            >
-              {slides.map((slide) => (
-                <div key={slide.alt} className="w-full shrink-0">
-                  <img
-                    src={slide.src}
-                    alt={slide.alt}
-                    className="w-full h-44 sm:h-52 md:h-56 object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </motion.div>
-
-            <div className="absolute inset-0 bg-gradient-to-t from-background/35 via-transparent to-transparent pointer-events-none" />
-          </div>
-
-          <div className="mt-3 flex justify-center gap-2">
-            {slides.map((slide, index) => (
-              <button
-                key={slide.alt}
-                type="button"
-                onClick={() => setActiveSlide(index)}
-                aria-label={`Go to slide ${index + 1}`}
-                className={`h-1.5 rounded-full transition-all ${
-                  activeSlide === index ? "w-7 bg-primary" : "w-4 bg-primary/35 hover:bg-primary/50"
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
@@ -86,40 +31,51 @@ function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
         </div>
 
-        <div className="container-px mx-auto max-w-7xl relative pt-20 pb-32 md:pt-32 md:pb-44">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-4xl"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/5 text-xs text-primary font-medium tracking-wider uppercase mb-6">
-              <Sparkles className="w-3 h-3" />
-              Telecom · Electric Mobility · Trading
-            </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight">
-              Powering the <span className="text-gradient">connected</span> &{" "}
-              <span className="text-gradient">electric</span> future.
-            </h1>
-            <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl">
-              Unitech E-Power and Trading PLC builds the infrastructure behind tomorrow's networks
-              and brings clean, intelligent electric vehicles to the streets today.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold hover:opacity-90 transition glow-cyan"
-              >
-                Start a project <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/electric-vehicles"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary/60 transition font-semibold"
-              >
-                Explore EV lineup
-              </Link>
-            </div>
-          </motion.div>
+        <div className="container-px mx-auto max-w-7xl relative pt-24 pb-32 md:pt-36 md:pb-44">
+          <div className="grid lg:grid-cols-[1fr_auto] gap-14 lg:gap-12 xl:gap-16 items-start">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="max-w-4xl min-w-0"
+            >
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-red-400/40 bg-red-600 text-xs text-white font-medium tracking-wider uppercase mb-6">
+                <Sparkles className="w-3 h-3" />
+                Huawei Gold Partner
+              </div>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.05] tracking-tight">
+                Engineering the <span className="text-gradient">Future</span> of{" "}
+                <span className="text-gradient">Global</span> Connectivity.
+              </h1>
+              <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl">
+                Unitech delivers high-performance communication infrastructure, industrial steel solutions, and
+                sustainable energy systems to empower modern enterprises.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-gradient-to-r from-primary to-secondary text-primary-foreground font-semibold hover:opacity-90 transition glow-cyan"
+                >
+                  Start a project <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  to="/electric-vehicles"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg border border-border bg-card/50 backdrop-blur hover:border-primary/60 transition font-semibold"
+                >
+                  Explore EV lineup
+                </Link>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65, delay: 0.12 }}
+              className="flex justify-center lg:justify-end w-full lg:w-auto lg:max-w-[min(100%,400px)] xl:max-w-[440px] lg:pt-20 xl:pt-24 lg:mr-6 xl:mr-10 2xl:mr-12"
+            >
+              <HuaweiPartnerBadge className="sm:max-w-[340px] lg:max-w-none" />
+            </motion.div>
+          </div>
 
           {/* Stats */}
           <motion.div
@@ -129,7 +85,7 @@ function Home() {
             className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
           >
             {[
-              { v: "12+", l: "Years experience" },
+              { v: "10+", l: "Years experience" },
               { v: "350+", l: "Sites deployed" },
               { v: "40K+", l: "EV km logged" },
               { v: "24/7", l: "Field operations" },
@@ -145,13 +101,19 @@ function Home() {
 
       {/* PILLARS */}
       <section className="container-px mx-auto max-w-7xl py-24">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 max-w-3xl mx-auto">
           <p className="text-xs uppercase tracking-widest text-primary mb-3">What we do</p>
-          <h2 className="text-3xl md:text-5xl font-bold">Two pillars. One vision.</h2>
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight">
+            Telecom, electric mobility, and <span className="text-gradient">steel products</span> — engineered for scale.
+          </h2>
+          <p className="mt-4 text-muted-foreground text-lg">
+            Explore our three core lines. Hover a card for a quick preview; click through for full detail.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
           <PillarCard
+            index={0}
             to="/telecom"
             img={telecomImg}
             icon={<Radio className="w-6 h-6" />}
@@ -159,11 +121,21 @@ function Home() {
             desc="End-to-end network design, fiber rollout, tower construction, RAN deployment and managed services for operators."
           />
           <PillarCard
+            index={1}
             to="/electric-vehicles"
             img={evImg}
             icon={<BatteryCharging className="w-6 h-6" />}
             title="Electric Vehicles"
             desc="Imported and locally adapted EVs — passenger cars, scooters, three-wheelers — plus charging infrastructure."
+          />
+          <PillarCard
+            index={2}
+            to="/steel-materials"
+            img={heroBg}
+            icon={<Factory className="w-6 h-6" />}
+            title="Steel Products"
+            desc="Structural sections, rebar, plate, and coordinated supply for construction, towers, and industrial builds."
+            className="md:col-span-2 lg:col-span-1"
           />
         </div>
       </section>
@@ -175,7 +147,7 @@ function Home() {
             <p className="text-xs uppercase tracking-widest text-primary mb-3">Why Unitech</p>
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Engineered for reliability. Built for scale.</h2>
             <p className="text-muted-foreground text-lg">
-              From mission-critical telecom infrastructure to next-gen mobility, we combine deep
+              From mission-critical telecom infrastructure to next-gen mobility and industrial materials, we combine deep
               technical expertise with a relentless focus on quality and sustainability.
             </p>
           </div>
@@ -207,7 +179,7 @@ function Home() {
               Ready to build what's <span className="text-gradient">next</span>?
             </h2>
             <p className="mt-5 text-muted-foreground max-w-xl mx-auto">
-              Talk to our team about your telecom rollout or fleet electrification.
+              Talk to our team about your telecom rollout, steel program, or fleet electrification.
             </p>
             <Link
               to="/contact"
@@ -228,27 +200,52 @@ function PillarCard({
   icon,
   title,
   desc,
+  index,
+  className,
 }: {
-  to: "/telecom" | "/electric-vehicles";
+  to: "/telecom" | "/electric-vehicles" | "/steel-materials";
   img: string;
   icon: React.ReactNode;
   title: string;
   desc: string;
+  index: number;
+  className?: string;
 }) {
   return (
-    <Link to={to} className="group relative overflow-hidden rounded-2xl glass-card aspect-[4/5] md:aspect-[5/6] block">
-      <img src={img} alt={title} className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-105 transition-all duration-700" loading="lazy" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-      <div className="relative h-full p-8 flex flex-col justify-end">
-        <div className="w-12 h-12 rounded-xl bg-primary/15 text-primary flex items-center justify-center mb-4 backdrop-blur">
-          {icon}
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, y: 36 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.55, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ y: -10 }}
+    >
+      <Link
+        to={to}
+        className="group relative overflow-hidden rounded-2xl glass-card aspect-[4/5] md:aspect-[5/6] block h-full border border-border/50 shadow-[var(--shadow-elevated)] hover:border-primary/45 hover:shadow-[var(--glow-cyan)] transition-[border-color,box-shadow] duration-300"
+      >
+        <img
+          src={img}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-[0.62] group-hover:scale-105 transition-all duration-700 ease-out"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/65 to-background/20 group-hover:via-background/55 transition-colors duration-500" />
+        <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-secondary/10" />
+          <div className="absolute -inset-1 -translate-x-full skew-x-12 bg-gradient-to-r from-transparent via-white/12 to-transparent group-hover:translate-x-full transition-transform duration-1000 ease-out" />
         </div>
-        <h3 className="text-2xl md:text-3xl font-bold mb-2">{title}</h3>
-        <p className="text-muted-foreground max-w-md">{desc}</p>
-        <div className="mt-5 inline-flex items-center gap-2 text-primary font-semibold text-sm">
-          Learn more <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
+        <div className="relative h-full p-8 flex flex-col justify-end">
+          <div className="w-12 h-12 rounded-xl bg-primary/20 text-primary flex items-center justify-center mb-4 backdrop-blur-md ring-1 ring-primary/25 group-hover:scale-110 group-hover:bg-primary/25 transition-all duration-300">
+            {icon}
+          </div>
+          <h3 className="text-2xl md:text-3xl font-bold mb-2 group-hover:text-gradient transition-all duration-300">{title}</h3>
+          <p className="text-muted-foreground max-w-md group-hover:text-foreground/90 transition-colors duration-300">{desc}</p>
+          <div className="mt-5 inline-flex items-center gap-2 text-primary font-semibold text-sm">
+            Learn more <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" />
+          </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </motion.div>
   );
 }

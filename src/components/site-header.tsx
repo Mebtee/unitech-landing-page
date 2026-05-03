@@ -9,8 +9,7 @@ const nav = [
   { to: "/about", label: "About" },
   { to: "/telecom", label: "Telecom" },
   { to: "/electric-vehicles", label: "Electric Vehicles" },
-  { to: "/projects", label: "Projects" },
-  { to: "/news", label: "News" },
+  { to: "/steel-materials", label: "Steel Materials" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -20,12 +19,12 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
       <div className="container-px mx-auto max-w-7xl flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="relative w-9 h-9 md:w-10 md:h-10 rounded-lg overflow-hidden bg-card border border-border/60 shadow-[var(--shadow-elevated)] group-hover:scale-105 transition-transform">
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="relative w-9 h-9 md:w-10 md:h-10 rounded-lg overflow-hidden bg-white border border-neutral-200/90 shadow-md ring-1 ring-white/70 shrink-0 group-hover:scale-105 transition-transform">
             <img src={companyLogo} alt="Unitech logo" className="w-full h-full object-contain p-1.5" />
           </div>
           <div className="leading-tight">
-            <div className="font-display font-bold text-sm md:text-base tracking-tight">UNITECH</div>
+            <div className="font-display font-bold text-sm md:text-base tracking-tight text-foreground">UNITECH</div>
             <div className="text-[10px] md:text-xs text-muted-foreground tracking-widest">E-POWER & TRADING</div>
           </div>
         </Link>
