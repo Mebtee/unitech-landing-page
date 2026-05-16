@@ -145,17 +145,15 @@ function Home() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="text-xs uppercase tracking-widest text-primary mb-3">Why Unitech</p>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Engineered for reliability. Built for scale.</h2>
+            <h2 className="text-1xl md:text-1xl font-bold mb-1">With a strong footprint in Ethiopia and Djibouti, we combine international standards with profound local market knowledge to deliver exceptional value.</h2>
             <p className="text-muted-foreground text-lg">
-              From mission-critical telecom infrastructure to next-gen mobility and industrial materials, we combine deep
-              technical expertise with a relentless focus on quality and sustainability.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { icon: <Cpu />, t: "Smart engineering", d: "Modern stack & best-in-class hardware partners." },
-              { icon: <ShieldCheck />, t: "Quality assured", d: "ISO-aligned processes from design to handover." },
-              { icon: <Globe2 />, t: "Local expertise", d: "Deep on-the-ground knowledge across the region." },
+              { icon: <Cpu />, t: "Authorized Partnerships", d: "Proud to be a Huawei Gold Partner, ensuring authentic, state-of-the-art telecom solutions." },
+              { icon: <ShieldCheck />, t: "Uncompromising Quality", d: "From prime steel billets to certified electric vehicles, we source only the best." },
+              { icon: <Globe2 />, t: "Regional Expertise", d: "Deep operational capabilities spanning Ethiopia and Djibouti for seamless logistics." },
               { icon: <BatteryCharging />, t: "Sustainable", d: "Clean mobility & energy-efficient infrastructure." },
             ].map((f) => (
               <div key={f.t} className="glass-card rounded-xl p-5 hover:border-primary/40 transition">

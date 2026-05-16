@@ -17,7 +17,7 @@ export function SiteFooter() {
             </div>
           </div>
           <p className="text-sm text-muted-foreground max-w-xs">
-            Powering tomorrow's connected and electric infrastructure across Africa and beyond.
+            Your trusted partner for telecommunication solutions, high-quality steel products, and sustainable electric mobility across Ethiopia and Djibouti. Quality is King, Service is Worry-free!
           </p>
         </div>
 
@@ -43,9 +43,9 @@ export function SiteFooter() {
         <div>
           <h4 className="font-semibold mb-4 text-sm">Contact</h4>
           <ul className="space-y-3 text-sm text-muted-foreground">
-            <li className="flex gap-2"><MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />Addis Ababa, Ethiopia</li>
-            <li className="flex gap-2"><Phone className="w-4 h-4 text-primary mt-0.5 shrink-0" />+251 11 000 0000</li>
-            <li className="flex gap-2"><Mail className="w-4 h-4 text-primary mt-0.5 shrink-0" />info@unitech-epower.com</li>
+            <li className="flex gap-2"><MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />Nambie Street, Century Office Park 15th Floor, Addis Ababa, Ethiopia</li>
+            <li className="flex gap-2"><Phone className="w-4 h-4 text-primary mt-0.5 shrink-0" />+251 998590990</li>
+            <li className="flex gap-2"><Mail className="w-4 h-4 text-primary mt-0.5 shrink-0" />angie@unitechtrading.net</li>
           </ul>
           <div className="flex gap-3 mt-5">
             <a href="#" aria-label="LinkedIn" className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition"><Linkedin className="w-4 h-4" /></a>

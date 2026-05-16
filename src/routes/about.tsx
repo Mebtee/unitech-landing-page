@@ -19,9 +19,8 @@ function About() {
   return (
     <PageShell>
       <PageHero
-        eyebrow="Our company"
-        title={<>Building the backbone of <span className="text-gradient">modern Africa</span>.</>}
-        subtitle="Unitech E-Power and Trading PLC is a forward-thinking technology company specializing in telecom infrastructure and electric mobility solutions."
+        title={<>About <span className="text-gradient"> Us</span></>}
+        subtitle="Unitech Trading PLC is a professional trading company specializing in various metal products, tires, telecom infrastructure, and electric vehicles."
       />
 
       <section className="container-px mx-auto max-w-7xl py-20">
@@ -30,24 +29,23 @@ function About() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Who we are</h2>
             <div className="space-y-4 text-muted-foreground text-lg">
               <p>
-                Founded with a vision to bridge cutting-edge technology with local needs, Unitech E-Power
-                operates across two converging domains — connectivity and clean mobility.
+                We are dedicated to providing high-quality steel, related products, communication devices, and EV solutions to meet the diverse needs of the construction, industrial, telecommunications, and automotive sectors.
               </p>
               <p>
-                Our engineers, project managers and field crews deliver complex telecom programs while our
-                trading division brings world-class electric vehicles and charging hardware to market.
+                With operations spanning across Ethiopia and Djibouti, we have established a strong regional presence. Being a Huawei Gold Partner underscores our capability to handle large-scale communication supply chains and enterprise-grade infrastructure.
+
+
               </p>
               <p>
-                We believe sustainable infrastructure is the foundation of inclusive growth — and we're
-                building it, one site and one vehicle at a time.
+                With a customer-centric approach, we continuously strive for excellence, ensuring that every client receives the best possible service and products tailored to their specific project requirements.
               </p>
             </div>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { icon: <Target />, t: "Mission", d: "Deliver world-class telecom and electric mobility solutions that empower communities and accelerate sustainable progress." },
-              { icon: <Eye />, t: "Vision", d: "To be the most trusted partner for connected and electric infrastructure across the region." },
+              { icon: <Target />, t: "Mission", d: "To help clients achieve project success by providing high-quality metal products and technical solutions. We understand the uniqueness of each project, which is why we offer customized solutions to meet the specific needs of different clients." },
+              { icon: <Eye />, t: "Vision", d: "To become a leader in the metal products, infrastructure, and tire industry across the region, earning customer trust and support through innovation and exceptional service." },
               { icon: <Heart />, t: "Values", d: "Integrity, engineering excellence, customer obsession, and respect for the environment." },
               { icon: <Award />, t: "Promise", d: "Every project delivered on time, to spec, and built to outlast expectations." },
             ].map((c) => (
